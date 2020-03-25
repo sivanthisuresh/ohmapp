@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-img class="header-img" src="assets/logo.png"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<p class="heading-text">Alarm</p>
+
+<ion-content class="text-center" [scrollEvents]="true">
+  <ion-grid class="ion-margin-top mt30">
+    <ion-row style="font-weight:bold;">
+      <ion-col class="color-text">
+        Line No
+      </ion-col>
+      <ion-col class="color-text">
+        Station Name
+      </ion-col>
+      <ion-col class="color-text">
+        Fault Created
+      </ion-col>
+      <ion-col class="color-text">
+        Fault cleared
+      </ion-col>
+    </ion-row>
+    <ng-container *ngFor="let fault of faults">
+      <ion-row class="bg-color-gray">
+        <ion-col class="ptb11 color-danger">
+          {{fault.line_number}}
+        </ion-col>
+        <ion-col class="ptb11 color-danger">
+          {{fault.station_number}}
+        </ion-col>
+        <ion-col class="ptb11 color-danger">
+          {{fault.created_at}}
+        </ion-col>
+        <ion-col class="ptb11 color-danger">
+          {{fault.updated_at}}
+        </ion-col>
+      </ion-row>
+    </ng-container>
+  </ion-grid>
+</ion-content>

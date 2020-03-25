@@ -1,0 +1,167 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-img class="header-img" src="assets/logo.png"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<p class="heading-text" style="color: #ff5349">Line Summary</p>
+<ion-row style="font-weight:bold; background-color: orange; color:white; padding: 2px; margin-bottom: 0px;" class="ion-margin-top mt30 text-center">
+  <ion-col>
+    Stage
+  </ion-col>
+  <ion-col>
+    Current Status
+  </ion-col>
+  <ion-col>
+    Current Failures
+  </ion-col>
+  <ion-col>
+    Today Failures
+  </ion-col>
+</ion-row>
+
+<ion-content class="text-center" [scrollEvents]="true" >
+  <ion-grid class=" " style="background-color:slategray;">
+    <ion-row class="bb-gray">
+      <ion-col class="color-text ptb11 ">
+        LINE 1
+      </ion-col>
+      <ion-col class="color-text">
+        <ion-icon class="font30" name="close"></ion-icon>
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+    </ion-row>
+    <ion-row class="bb-gray">
+      <ion-col class="color-text ptb11">
+        LINE 2
+      </ion-col>
+      <ion-col class="color-text">
+        <ion-icon class="font30" name="close"></ion-icon>
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+    </ion-row>
+    <ion-row class="bb-gray">
+      <ion-col class="color-text ptb11">
+        LINE 3
+      </ion-col>
+      <ion-col class="color-text">
+        <ion-icon class="font30" name="close"></ion-icon>
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+    </ion-row>
+    <ion-row  class="bb-gray">
+      <ion-col class="color-text ptb11" [ngClass]="line4Active ? 'bgcolor-success' : 'bgcolor-danger'" style="color:#ffffff;">
+        LINE 4
+      </ion-col>
+      <ion-col class="color-text" [ngClass]="line4Active ? 'color-success' : 'color-danger'"> 
+        <ion-icon  class="font30" [name]="line4Active ? 'checkmark' : 'close'"></ion-icon>
+      </ion-col>
+      <ion-col class="color-text ptb11" [ngClass]="line4Active ? 'color-success' : 'color-danger'" >
+        {{todayFaults.NG}}
+      </ion-col>
+      <ion-col class="color-text ptb11" [ngClass]="line4Active ? 'color-success' : 'color-danger'" >
+        {{totalFaults.NG}}
+      </ion-col>
+    </ion-row>
+    <ion-row  class="bb-gray">
+      <ion-col class="color-text ptb11">
+        LINE 5
+      </ion-col>
+      <ion-col class="color-text">
+        <ion-icon  class="font30"name="close"></ion-icon>
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+    </ion-row>
+    <ion-row  class="bb-gray">
+      <ion-col class="ptb11">
+        LINE 6
+      </ion-col>
+      <ion-col class="">
+        <ion-icon  class="font30"name="close"></ion-icon>
+      </ion-col>
+      <ion-col class=" ptb11">
+        OFFLINE
+      </ion-col>
+      <ion-col class=" ptb11">
+        OFFLINE
+      </ion-col>
+    </ion-row>
+    <ion-row  class="bb-gray">
+      <ion-col class="color-text ptb11">
+        LINE 7
+      </ion-col>
+      <ion-col class="color-text">
+        <ion-icon  class="font30"name="close"></ion-icon>
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+    </ion-row>
+    <ion-row  class="bb-gray">
+      <ion-col class="color-text ptb11">
+        LINE 8
+      </ion-col>
+      <ion-col class="color-text">
+        <ion-icon  class="font30"name="close"></ion-icon>
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+    </ion-row>
+    <ion-row  class="bb-gray">
+      <ion-col class="color-text ptb11">
+        LINE 9
+      </ion-col>
+      <ion-col class="color-text">
+        <ion-icon  class="font30"name="close"></ion-icon>
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+    </ion-row>
+    <ion-row  class="bb-gray">
+      <ion-col class="color-text ptb11">
+        LINE 10
+      </ion-col>
+      <ion-col class="color-text">
+        <ion-icon  class="font30"name="close"></ion-icon>
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE
+      </ion-col>
+      <ion-col class="color-text ptb11">
+        OFFLINE 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

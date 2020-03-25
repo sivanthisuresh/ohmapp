@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-img class="header-img" src="assets/logo.png"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<p class="heading-text" style="color: #ff5349;">Line 4</p>
+<ion-item-divider>
+  <ion-label style="color:#000000; font-size: 15px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    GROUND STATUS
+  </ion-label>
+</ion-item-divider>
+
+<ion-row style="font-weight:bold; text-align: center; padding-top: 10px;padding-bottom: 10px; background-color: #cccccc;">
+  
+  <ion-col [ngClass]="(allStatus.G1 == 1) ? 'color-success' : 'color-danger'">
+    <ion-icon style="font-size: 70px;"  [name]="(allStatus.G1 == 1) ? 'checkmark-circle' : 'close-circle'"></ion-icon>
+    <p class="color-black m-0">ESD</p>
+  </ion-col>
+  <ion-col [ngClass]="(allStatus.G2 == '1') ? 'color-success' : 'color-danger'">
+    <ion-icon style="font-size: 70px;" [name]="(allStatus.G2 == 1) ? 'checkmark-circle' : 'close-circle'"></ion-icon>
+    <p class="color-black m-0">BODY</p>
+  </ion-col>
+  <ion-col [ngClass]="(allStatus.G3 == '1') ? 'color-success' : 'color-danger'">
+    <ion-icon style="font-size: 70px;" [name]="(allStatus.G3 == 1) ? 'checkmark-circle' : 'close-circle'"></ion-icon>
+    <p class="color-black m-0">TOOL</p>
+  </ion-col>
+  <ion-col [ngClass]="(allStatus.G4 == '1') ? 'color-success' : 'color-danger'">
+    <ion-icon style="font-size: 70px;" [name]="(allStatus.G4 == 1) ? 'checkmark-circle' : 'close-circle'"></ion-icon>
+    <p class="color-black m-0">MAT</p>
+  </ion-col>
+</ion-row>
+
+
+<ion-item-divider>
+  <ion-label style="color:#000000; font-size: 15px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    STATION STATUS
+  </ion-label>
+</ion-item-divider>
+<ion-content [scrollEvents]="true" >
+  <ion-grid  style="background-color:slategray; padding-top:10px; " >
+
+    <ng-container *ngFor="let sstatus of mstatus">
+      
+      <ion-row style="background-color: #ffffff; margin-bottom: 5px;">
+        <ion-col >
+
+          <ng-container *ngIf="sstatus.station_status == '1'" >
+          
+              <ion-icon style="font-size: 60px; color:#005500; margin-left: 0px; padding:20px;" name="checkmark-circle" ></ion-icon>
+          </ng-container>
+          <ng-container *ngIf="sstatus.station_status == '0'">
+            
+              <ion-icon style="font-size: 60px; color:#cc3300; margin-left: 0px;padding:20px;" name="close-circle"></ion-icon>
+          </ng-container>
+          <ng-container *ngIf="sstatus.station_status == 'x'">
+            
+              <ion-icon style="font-size: 60px; color:#cccccc; margin-left: 0px; padding:20px;" name="alert"></ion-icon>
+          
+          </ng-container>
+        </ion-col>
+
+
+        <ion-col>
+          <ion-title style="margin-left: -60px; padding-top:20px; font-size: 15px;"> {{sstatus.station_number}}</ion-title>
+          <ion-title style="margin-left: -60px; padding-top:15px;font-weight: bold;"> {{sstatus.station_name}}</ion-title>
+        </ion-col>
+
+
+        <ion-col>
+          <ion-title style="margin-left: -30px; padding-top:20px; font-size: 12px;">Fault at</ion-title>
+          <ion-title style="margin-left: -30px; padding-top:15px; font-size: 18px; color: red">  {{sstatus.station_created}}</ion-title>
+        </ion-col>
+    
+      </ion-row>
+      
+      
+    </ng-container>
+  </ion-grid>
+</ion-content>
